@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  Github
+
+  Created by Mohamed Fadl on 2/9/16.
+  Copyright © 2016 microapps. All rights reserved.
+*/
+
+"internet_error" = "No Internet";
+"ok_dialog" = "Ok";
+"cancel_dialog" = "Cancel";
+"confirm_msg_title" = "Confirmation Message";
+"yes_dialog" = "Yes";
+"no_dialog" = "No";
+"lang_empty" = "Please enter a programming Language.";

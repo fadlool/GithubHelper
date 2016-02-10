@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="SMY-30-ng1">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EId-Ss-yL1">
+            <objects>
+                <viewController id="SMY-30-ng1" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mm0-Rt-qv4"/>
+                        <viewControllerLayoutGuide type="bottom" id="zK3-1e-QSS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JgX-8t-wfp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Lae-yF-gP5">
+                                <rect key="frame" x="100" y="111" width="120" height="95"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="qxJ-Oe-pvJ"/>
+                                    <constraint firstAttribute="height" constant="95" id="x8Y-AT-4oJ"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CompanyLogo" translatesAutoresizingMaskIntoConstraints="NO" id="RzU-Wu-nnB">
+                                <rect key="frame" x="83" y="421" width="154" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="154" id="1Tq-48-tJC"/>
+                                    <constraint firstAttribute="height" constant="39" id="2ZP-LU-FE2"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Lae-yF-gP5" firstAttribute="centerY" secondItem="JgX-8t-wfp" secondAttribute="centerY" constant="-81.5" id="XUn-HQ-SAd"/>
+                            <constraint firstItem="Lae-yF-gP5" firstAttribute="leading" secondItem="JgX-8t-wfp" secondAttribute="leadingMargin" constant="67" id="cIV-yO-XRD"/>
+                            <constraint firstItem="Lae-yF-gP5" firstAttribute="centerX" secondItem="JgX-8t-wfp" secondAttribute="centerX" id="g93-eQ-Ei5"/>
+                            <constraint firstItem="Lae-yF-gP5" firstAttribute="top" secondItem="mm0-Rt-qv4" secondAttribute="bottom" constant="284" id="lbQ-2u-6ym"/>
+                            <constraint firstItem="zK3-1e-QSS" firstAttribute="top" secondItem="RzU-Wu-nnB" secondAttribute="bottom" constant="20" id="lqT-kO-Mcb"/>
+                            <constraint firstItem="RzU-Wu-nnB" firstAttribute="centerX" secondItem="JgX-8t-wfp" secondAttribute="centerX" id="nen-11-2tf"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="cIV-yO-XRD"/>
+                                <exclude reference="lbQ-2u-6ym"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ef6-ta-Go3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="CompanyLogo" width="491" height="112"/>
+        <image name="Logo" width="400" height="234"/>
+    </resources>
+</document>
