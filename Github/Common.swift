@@ -16,40 +16,13 @@ extension String {
 
 public class Common: NSObject {
     
-    public static let LOGIN_SERVICE = "XXX_LOGIN";
-    public static let GET_USER_INFO_SERVICE = "GET_USER_INFO";
-    public static let GET_USER_NOTIFS_SERVICE = "XXX_GET_USER_NOTIFICATIONS";
-    public static let APPROVE_REQ_SERVICE = "XXX_APPROVE_REQUEST"
-    public static let CLOSE_REQ_SERVICE = "XXX_CLOSE_FYI_NOTIFICATION"
-    public static let REJECT_REQ_SERVICE = "XXX_REJECT_REQUEST"
-    public static let GET_EMPLOYEES_LIST_SERVICE = "XXX_GET_EMP_LIST"
-    public static let REQUEST_VACATION_SERVICE = "CREATE_VACATION_REQUEST"
-    
-    public static let MenuProfileOrder: Int = 0
-    public static let MenuIdentityReqOrder: Int = 1
-    public static let MenuSelfVacationOrder: Int = 2
-    public static let MenuMedicalReqOrder: Int = 3
-    public static let MenuDelegateOrder: Int = 4
-    public static let MenuLogoutOrder: Int = 5
-    
-    public static let UserLanguage: String = "preference_language"
-    public static let DateIsHijri: String = "preference_is_hijri"
-    public static let DateFormat: String = "preference_date_format"
-    public static let DUPLICATE_DRAFT:String = "Duplicate Draft"
-    public static let ERROR_TYPE:String = "Compulink.Common.Entities.Exceptions.InvalidSessionException"
+    public static let GITHUB_CLIENT_ID = "25b74fe446a0e0d779bc";
+    public static let GITHUB_CLIENT_SECRET = "49597f3412c6b1f3fa7dc98b64bbd46df7896cf8";
     
     
-    public static var BASE_URL_EXTERNAL:String = "http://10.0.2.14:4000/WebClientServer" // Kassem
-    //public static var BASE_URL_EXTERNAL:String = "http://10.0.2.133:9000/WebClientServer"
-    
-    public static let DATE_FORMAT_1 = "dd MM yyyy"
-    public static let DATE_FORMAT_2 = "dd/MM/yyyy"
-    
-    public static let BASE_URL_TAG = "BASE_URL"
-    
-       public class func setBaseUrl(url:String){
-        self.BASE_URL_EXTERNAL = url
-    }
+    public static let EMBED_SEGUE_IDENTIFIER = "embed_list"
+    public static let SHOWREPOS_SEGUE_IDENTIFIER = "show_repos"
+    public static let BASE_URL:String = "https://api.github.com/"
 
 //    public class func changeLanguage(){
 //        // use whatever language/locale id you want to override

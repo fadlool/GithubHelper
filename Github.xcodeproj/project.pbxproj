@@ -7,8 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		120392B61C6CA5DF003536D7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120392B51C6CA5DF003536D7 /* MainViewController.swift */; };
+		120392B81C6CA5F4003536D7 /* ReposTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120392B71C6CA5F4003536D7 /* ReposTableViewController.swift */; };
+		120392C41C6CAB6E003536D7 /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 120392BD1C6CAB6E003536D7 /* JSONModel.m */; };
+		120392C51C6CAB6E003536D7 /* JSONModelArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 120392BF1C6CAB6E003536D7 /* JSONModelArray.m */; };
+		120392C61C6CAB6E003536D7 /* JSONModelClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 120392C11C6CAB6E003536D7 /* JSONModelClassProperty.m */; };
+		120392C71C6CAB6E003536D7 /* JSONModelError.m in Sources */ = {isa = PBXBuildFile; fileRef = 120392C31C6CAB6E003536D7 /* JSONModelError.m */; };
+		120392CB1C6CAB8A003536D7 /* NSArray+JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 120392CA1C6CAB8A003536D7 /* NSArray+JSONModel.m */; };
+		120392D31C6CABA5003536D7 /* JSONAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 120392CE1C6CABA5003536D7 /* JSONAPI.m */; };
+		120392D41C6CABA5003536D7 /* JSONHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 120392D01C6CABA5003536D7 /* JSONHTTPClient.m */; };
+		120392D51C6CABA5003536D7 /* JSONModel+networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 120392D21C6CABA5003536D7 /* JSONModel+networking.m */; };
+		120392DB1C6CABBB003536D7 /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 120392D81C6CABBB003536D7 /* JSONKeyMapper.m */; };
+		120392DC1C6CABBB003536D7 /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 120392DA1C6CABBB003536D7 /* JSONValueTransformer.m */; };
+		120392DE1C6CAE60003536D7 /* Repository.m in Sources */ = {isa = PBXBuildFile; fileRef = 120392DD1C6CAE60003536D7 /* Repository.m */; };
+		120392E21C6CB195003536D7 /* Owner.m in Sources */ = {isa = PBXBuildFile; fileRef = 120392E11C6CB195003536D7 /* Owner.m */; };
+		120392F51C6CCCB8003536D7 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 120392E71C6CCCB8003536D7 /* AFNetworkActivityIndicatorManager.m */; };
+		120392F61C6CCCB8003536D7 /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 120392E91C6CCCB8003536D7 /* UIActivityIndicatorView+AFNetworking.m */; };
+		120392F71C6CCCB8003536D7 /* UIAlertView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 120392EB1C6CCCB8003536D7 /* UIAlertView+AFNetworking.m */; };
+		120392F81C6CCCB8003536D7 /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 120392ED1C6CCCB8003536D7 /* UIButton+AFNetworking.m */; };
+		120392F91C6CCCB8003536D7 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 120392EF1C6CCCB8003536D7 /* UIImageView+AFNetworking.m */; };
+		120392FA1C6CCCB8003536D7 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 120392F21C6CCCB8003536D7 /* UIProgressView+AFNetworking.m */; };
+		120392FB1C6CCCB8003536D7 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 120392F41C6CCCB8003536D7 /* UIWebView+AFNetworking.m */; };
+		120392FE1C6CCDC5003536D7 /* RepoViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 120392FD1C6CCDC5003536D7 /* RepoViewCell.m */; };
 		125B83AA1C6A455C0027D94D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125B83A91C6A455C0027D94D /* AppDelegate.swift */; };
-		125B83AC1C6A455C0027D94D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125B83AB1C6A455C0027D94D /* ViewController.swift */; };
 		125B83AF1C6A455C0027D94D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 125B83AD1C6A455C0027D94D /* Main.storyboard */; };
 		125B83B21C6A455C0027D94D /* Github.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 125B83B01C6A455C0027D94D /* Github.xcdatamodeld */; };
 		125B83B41C6A455C0027D94D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 125B83B31C6A455C0027D94D /* Assets.xcassets */; };
@@ -38,7 +59,6 @@
 		125B841E1C6A55810027D94D /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 125B841D1C6A55810027D94D /* Helper.m */; };
 		125B84241C6A5DE20027D94D /* CustomAlertInputDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 125B84211C6A5DE20027D94D /* CustomAlertInputDelegate.m */; };
 		125B84251C6A5DE20027D94D /* CustomAlertViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 125B84231C6A5DE20027D94D /* CustomAlertViewDelegate.m */; };
-		127E98E21C6BA32D00F5255C /* CRSServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 127E98E11C6BA32D00F5255C /* CRSServices.m */; };
 		127E99061C6BA9BC00F5255C /* NSArray+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 127E98F01C6BA9BC00F5255C /* NSArray+Utilities.m */; };
 		127E99071C6BA9BC00F5255C /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 127E98F21C6BA9BC00F5255C /* NSData+Base64.m */; };
 		127E99081C6BA9BC00F5255C /* NSInvocation+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 127E98F41C6BA9BC00F5255C /* NSInvocation+Blocks.m */; };
@@ -70,9 +90,51 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		120392B51C6CA5DF003536D7 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		120392B71C6CA5F4003536D7 /* ReposTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReposTableViewController.swift; sourceTree = "<group>"; };
+		120392BC1C6CAB6E003536D7 /* JSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONModel.h; path = Github/JSONModel/JSONModel.h; sourceTree = "<group>"; };
+		120392BD1C6CAB6E003536D7 /* JSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONModel.m; path = Github/JSONModel/JSONModel.m; sourceTree = "<group>"; };
+		120392BE1C6CAB6E003536D7 /* JSONModelArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONModelArray.h; path = Github/JSONModel/JSONModelArray.h; sourceTree = "<group>"; };
+		120392BF1C6CAB6E003536D7 /* JSONModelArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONModelArray.m; path = Github/JSONModel/JSONModelArray.m; sourceTree = "<group>"; };
+		120392C01C6CAB6E003536D7 /* JSONModelClassProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONModelClassProperty.h; path = Github/JSONModel/JSONModelClassProperty.h; sourceTree = "<group>"; };
+		120392C11C6CAB6E003536D7 /* JSONModelClassProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONModelClassProperty.m; path = Github/JSONModel/JSONModelClassProperty.m; sourceTree = "<group>"; };
+		120392C21C6CAB6E003536D7 /* JSONModelError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONModelError.h; path = Github/JSONModel/JSONModelError.h; sourceTree = "<group>"; };
+		120392C31C6CAB6E003536D7 /* JSONModelError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONModelError.m; path = Github/JSONModel/JSONModelError.m; sourceTree = "<group>"; };
+		120392C91C6CAB8A003536D7 /* NSArray+JSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+JSONModel.h"; path = "Github/JSONModelCategories/NSArray+JSONModel.h"; sourceTree = "<group>"; };
+		120392CA1C6CAB8A003536D7 /* NSArray+JSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+JSONModel.m"; path = "Github/JSONModelCategories/NSArray+JSONModel.m"; sourceTree = "<group>"; };
+		120392CD1C6CABA5003536D7 /* JSONAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONAPI.h; path = Github/JSONModelNetworking/JSONAPI.h; sourceTree = "<group>"; };
+		120392CE1C6CABA5003536D7 /* JSONAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONAPI.m; path = Github/JSONModelNetworking/JSONAPI.m; sourceTree = "<group>"; };
+		120392CF1C6CABA5003536D7 /* JSONHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONHTTPClient.h; path = Github/JSONModelNetworking/JSONHTTPClient.h; sourceTree = "<group>"; };
+		120392D01C6CABA5003536D7 /* JSONHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONHTTPClient.m; path = Github/JSONModelNetworking/JSONHTTPClient.m; sourceTree = "<group>"; };
+		120392D11C6CABA5003536D7 /* JSONModel+networking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "JSONModel+networking.h"; path = "Github/JSONModelNetworking/JSONModel+networking.h"; sourceTree = "<group>"; };
+		120392D21C6CABA5003536D7 /* JSONModel+networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "JSONModel+networking.m"; path = "Github/JSONModelNetworking/JSONModel+networking.m"; sourceTree = "<group>"; };
+		120392D71C6CABBB003536D7 /* JSONKeyMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONKeyMapper.h; path = Github/JSONModelTransformations/JSONKeyMapper.h; sourceTree = "<group>"; };
+		120392D81C6CABBB003536D7 /* JSONKeyMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONKeyMapper.m; path = Github/JSONModelTransformations/JSONKeyMapper.m; sourceTree = "<group>"; };
+		120392D91C6CABBB003536D7 /* JSONValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONValueTransformer.h; path = Github/JSONModelTransformations/JSONValueTransformer.h; sourceTree = "<group>"; };
+		120392DA1C6CABBB003536D7 /* JSONValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONValueTransformer.m; path = Github/JSONModelTransformations/JSONValueTransformer.m; sourceTree = "<group>"; };
+		120392DD1C6CAE60003536D7 /* Repository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Repository.m; sourceTree = "<group>"; };
+		120392DF1C6CAE6F003536D7 /* Repository.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Repository.h; sourceTree = "<group>"; };
+		120392E01C6CB113003536D7 /* Owner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Owner.h; sourceTree = "<group>"; };
+		120392E11C6CB195003536D7 /* Owner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Owner.m; sourceTree = "<group>"; };
+		120392E61C6CCCB8003536D7 /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFNetworkActivityIndicatorManager.h; path = "Github/AFNetworking/UIKit+AFNetworking/AFNetworkActivityIndicatorManager.h"; sourceTree = "<group>"; };
+		120392E71C6CCCB8003536D7 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFNetworkActivityIndicatorManager.m; path = "Github/AFNetworking/UIKit+AFNetworking/AFNetworkActivityIndicatorManager.m"; sourceTree = "<group>"; };
+		120392E81C6CCCB8003536D7 /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIActivityIndicatorView+AFNetworking.h"; path = "Github/AFNetworking/UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
+		120392E91C6CCCB8003536D7 /* UIActivityIndicatorView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIActivityIndicatorView+AFNetworking.m"; path = "Github/AFNetworking/UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.m"; sourceTree = "<group>"; };
+		120392EA1C6CCCB8003536D7 /* UIAlertView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+AFNetworking.h"; path = "Github/AFNetworking/UIKit+AFNetworking/UIAlertView+AFNetworking.h"; sourceTree = "<group>"; };
+		120392EB1C6CCCB8003536D7 /* UIAlertView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+AFNetworking.m"; path = "Github/AFNetworking/UIKit+AFNetworking/UIAlertView+AFNetworking.m"; sourceTree = "<group>"; };
+		120392EC1C6CCCB8003536D7 /* UIButton+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIButton+AFNetworking.h"; path = "Github/AFNetworking/UIKit+AFNetworking/UIButton+AFNetworking.h"; sourceTree = "<group>"; };
+		120392ED1C6CCCB8003536D7 /* UIButton+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIButton+AFNetworking.m"; path = "Github/AFNetworking/UIKit+AFNetworking/UIButton+AFNetworking.m"; sourceTree = "<group>"; };
+		120392EE1C6CCCB8003536D7 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImageView+AFNetworking.h"; path = "Github/AFNetworking/UIKit+AFNetworking/UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
+		120392EF1C6CCCB8003536D7 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+AFNetworking.m"; path = "Github/AFNetworking/UIKit+AFNetworking/UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		120392F01C6CCCB8003536D7 /* UIKit+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIKit+AFNetworking.h"; path = "Github/AFNetworking/UIKit+AFNetworking/UIKit+AFNetworking.h"; sourceTree = "<group>"; };
+		120392F11C6CCCB8003536D7 /* UIProgressView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIProgressView+AFNetworking.h"; path = "Github/AFNetworking/UIKit+AFNetworking/UIProgressView+AFNetworking.h"; sourceTree = "<group>"; };
+		120392F21C6CCCB8003536D7 /* UIProgressView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIProgressView+AFNetworking.m"; path = "Github/AFNetworking/UIKit+AFNetworking/UIProgressView+AFNetworking.m"; sourceTree = "<group>"; };
+		120392F31C6CCCB8003536D7 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIWebView+AFNetworking.h"; path = "Github/AFNetworking/UIKit+AFNetworking/UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
+		120392F41C6CCCB8003536D7 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIWebView+AFNetworking.m"; path = "Github/AFNetworking/UIKit+AFNetworking/UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
+		120392FC1C6CCDC5003536D7 /* RepoViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepoViewCell.h; sourceTree = "<group>"; };
+		120392FD1C6CCDC5003536D7 /* RepoViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepoViewCell.m; sourceTree = "<group>"; };
 		125B83A61C6A455C0027D94D /* Github.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Github.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		125B83A91C6A455C0027D94D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		125B83AB1C6A455C0027D94D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		125B83AE1C6A455C0027D94D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		125B83B11C6A455C0027D94D /* Github.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Github.xcdatamodel; sourceTree = "<group>"; };
 		125B83B31C6A455C0027D94D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -128,8 +190,6 @@
 		125B84211C6A5DE20027D94D /* CustomAlertInputDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomAlertInputDelegate.m; path = Github/Dialogs/CustomAlertInputDelegate.m; sourceTree = "<group>"; };
 		125B84221C6A5DE20027D94D /* CustomAlertViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomAlertViewDelegate.h; path = Github/Dialogs/CustomAlertViewDelegate.h; sourceTree = "<group>"; };
 		125B84231C6A5DE20027D94D /* CustomAlertViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomAlertViewDelegate.m; path = Github/Dialogs/CustomAlertViewDelegate.m; sourceTree = "<group>"; };
-		127E98E01C6BA32D00F5255C /* CRSServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRSServices.h; sourceTree = "<group>"; };
-		127E98E11C6BA32D00F5255C /* CRSServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRSServices.m; sourceTree = "<group>"; };
 		127E98EF1C6BA9BC00F5255C /* NSArray+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+Utilities.h"; path = "Github/UAGithubEngine/NSArray+Utilities.h"; sourceTree = "<group>"; };
 		127E98F01C6BA9BC00F5255C /* NSArray+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+Utilities.m"; path = "Github/UAGithubEngine/NSArray+Utilities.m"; sourceTree = "<group>"; };
 		127E98F11C6BA9BC00F5255C /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Base64.h"; path = "Github/UAGithubEngine/NSData+Base64.h"; sourceTree = "<group>"; };
@@ -180,6 +240,76 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		120392BB1C6CAB62003536D7 /* JSONModel */ = {
+			isa = PBXGroup;
+			children = (
+				120392BC1C6CAB6E003536D7 /* JSONModel.h */,
+				120392BD1C6CAB6E003536D7 /* JSONModel.m */,
+				120392BE1C6CAB6E003536D7 /* JSONModelArray.h */,
+				120392BF1C6CAB6E003536D7 /* JSONModelArray.m */,
+				120392C01C6CAB6E003536D7 /* JSONModelClassProperty.h */,
+				120392C11C6CAB6E003536D7 /* JSONModelClassProperty.m */,
+				120392C21C6CAB6E003536D7 /* JSONModelError.h */,
+				120392C31C6CAB6E003536D7 /* JSONModelError.m */,
+			);
+			name = JSONModel;
+			sourceTree = "<group>";
+		};
+		120392C81C6CAB7F003536D7 /* JSONModelCategories */ = {
+			isa = PBXGroup;
+			children = (
+				120392C91C6CAB8A003536D7 /* NSArray+JSONModel.h */,
+				120392CA1C6CAB8A003536D7 /* NSArray+JSONModel.m */,
+			);
+			name = JSONModelCategories;
+			sourceTree = "<group>";
+		};
+		120392CC1C6CAB90003536D7 /* JSONModelNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				120392CD1C6CABA5003536D7 /* JSONAPI.h */,
+				120392CE1C6CABA5003536D7 /* JSONAPI.m */,
+				120392CF1C6CABA5003536D7 /* JSONHTTPClient.h */,
+				120392D01C6CABA5003536D7 /* JSONHTTPClient.m */,
+				120392D11C6CABA5003536D7 /* JSONModel+networking.h */,
+				120392D21C6CABA5003536D7 /* JSONModel+networking.m */,
+			);
+			name = JSONModelNetworking;
+			sourceTree = "<group>";
+		};
+		120392D61C6CABAF003536D7 /* JSONModelTransformations */ = {
+			isa = PBXGroup;
+			children = (
+				120392D71C6CABBB003536D7 /* JSONKeyMapper.h */,
+				120392D81C6CABBB003536D7 /* JSONKeyMapper.m */,
+				120392D91C6CABBB003536D7 /* JSONValueTransformer.h */,
+				120392DA1C6CABBB003536D7 /* JSONValueTransformer.m */,
+			);
+			name = JSONModelTransformations;
+			sourceTree = "<group>";
+		};
+		120392E51C6CCC75003536D7 /* UIKit+AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				120392E61C6CCCB8003536D7 /* AFNetworkActivityIndicatorManager.h */,
+				120392E71C6CCCB8003536D7 /* AFNetworkActivityIndicatorManager.m */,
+				120392E81C6CCCB8003536D7 /* UIActivityIndicatorView+AFNetworking.h */,
+				120392E91C6CCCB8003536D7 /* UIActivityIndicatorView+AFNetworking.m */,
+				120392EA1C6CCCB8003536D7 /* UIAlertView+AFNetworking.h */,
+				120392EB1C6CCCB8003536D7 /* UIAlertView+AFNetworking.m */,
+				120392EC1C6CCCB8003536D7 /* UIButton+AFNetworking.h */,
+				120392ED1C6CCCB8003536D7 /* UIButton+AFNetworking.m */,
+				120392EE1C6CCCB8003536D7 /* UIImageView+AFNetworking.h */,
+				120392EF1C6CCCB8003536D7 /* UIImageView+AFNetworking.m */,
+				120392F01C6CCCB8003536D7 /* UIKit+AFNetworking.h */,
+				120392F11C6CCCB8003536D7 /* UIProgressView+AFNetworking.h */,
+				120392F21C6CCCB8003536D7 /* UIProgressView+AFNetworking.m */,
+				120392F31C6CCCB8003536D7 /* UIWebView+AFNetworking.h */,
+				120392F41C6CCCB8003536D7 /* UIWebView+AFNetworking.m */,
+			);
+			name = "UIKit+AFNetworking";
+			sourceTree = "<group>";
+		};
 		125B839D1C6A455C0027D94D = {
 			isa = PBXGroup;
 			children = (
@@ -236,7 +366,8 @@
 			isa = PBXGroup;
 			children = (
 				125B83DD1C6A51470027D94D /* LoginViewController.swift */,
-				125B83AB1C6A455C0027D94D /* ViewController.swift */,
+				120392B51C6CA5DF003536D7 /* MainViewController.swift */,
+				120392B71C6CA5F4003536D7 /* ReposTableViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -244,8 +375,6 @@
 		125B83DB1C6A50330027D94D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				127E98E01C6BA32D00F5255C /* CRSServices.h */,
-				127E98E11C6BA32D00F5255C /* CRSServices.m */,
 				125B841C1C6A55810027D94D /* Helper.h */,
 				125B841D1C6A55810027D94D /* Helper.m */,
 				125B841A1C6A55410027D94D /* Services.swift */,
@@ -272,6 +401,10 @@
 		125B83E71C6A53C80027D94D /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				120392D61C6CABAF003536D7 /* JSONModelTransformations */,
+				120392CC1C6CAB90003536D7 /* JSONModelNetworking */,
+				120392C81C6CAB7F003536D7 /* JSONModelCategories */,
+				120392BB1C6CAB62003536D7 /* JSONModel */,
 				127E98EE1C6BA9AC00F5255C /* UAEngine */,
 				125B841F1C6A5DB50027D94D /* Dialogs */,
 				125B84091C6A542E0027D94D /* Pickers */,
@@ -285,6 +418,7 @@
 		125B83E81C6A53EA0027D94D /* AFNetworking */ = {
 			isa = PBXGroup;
 			children = (
+				120392E51C6CCC75003536D7 /* UIKit+AFNetworking */,
 				125B83EA1C6A541A0027D94D /* AFHTTPRequestOperation.h */,
 				125B83EB1C6A541A0027D94D /* AFHTTPRequestOperation.m */,
 				125B83EC1C6A541A0027D94D /* AFHTTPRequestOperationManager.h */,
@@ -336,7 +470,13 @@
 		125B84171C6A545E0027D94D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				120392FC1C6CCDC5003536D7 /* RepoViewCell.h */,
+				120392FD1C6CCDC5003536D7 /* RepoViewCell.m */,
 				125B84181C6A54780027D94D /* DropDownItem.swift */,
+				120392DD1C6CAE60003536D7 /* Repository.m */,
+				120392DF1C6CAE6F003536D7 /* Repository.h */,
+				120392E01C6CB113003536D7 /* Owner.h */,
+				120392E11C6CB195003536D7 /* Owner.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -516,42 +656,62 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				120392FA1C6CCCB8003536D7 /* UIProgressView+AFNetworking.m in Sources */,
 				125B84051C6A541A0027D94D /* AFURLSessionManager.m in Sources */,
 				127E99091C6BA9BC00F5255C /* NSString+UAGithubEngineUtilities.m in Sources */,
+				120392F81C6CCCB8003536D7 /* UIButton+AFNetworking.m in Sources */,
 				125B83DE1C6A51470027D94D /* LoginViewController.swift in Sources */,
-				125B83AC1C6A455C0027D94D /* ViewController.swift in Sources */,
+				120392C71C6CAB6E003536D7 /* JSONModelError.m in Sources */,
 				125B84241C6A5DE20027D94D /* CustomAlertInputDelegate.m in Sources */,
 				125B841B1C6A55410027D94D /* Services.swift in Sources */,
 				125B84001C6A541A0027D94D /* AFNetworkReachabilityManager.m in Sources */,
 				125B83AA1C6A455C0027D94D /* AppDelegate.swift in Sources */,
 				125B84131C6A543F0027D94D /* AbstractActionSheetPicker.m in Sources */,
 				125B84021C6A541A0027D94D /* AFURLConnectionOperation.m in Sources */,
+				120392D51C6CABA5003536D7 /* JSONModel+networking.m in Sources */,
 				127E99081C6BA9BC00F5255C /* NSInvocation+Blocks.m in Sources */,
+				120392B81C6CA5F4003536D7 /* ReposTableViewController.swift in Sources */,
 				125B83FF1C6A541A0027D94D /* AFHTTPSessionManager.m in Sources */,
 				125B841E1C6A55810027D94D /* Helper.m in Sources */,
+				120392DC1C6CABBB003536D7 /* JSONValueTransformer.m in Sources */,
+				120392CB1C6CAB8A003536D7 /* NSArray+JSONModel.m in Sources */,
 				125B84031C6A541A0027D94D /* AFURLRequestSerialization.m in Sources */,
 				125B83B21C6A455C0027D94D /* Github.xcdatamodeld in Sources */,
 				127E990E1C6BA9BC00F5255C /* UAGithubJSONParser.m in Sources */,
 				125B83E41C6A52090027D94D /* Common.swift in Sources */,
 				125B83E21C6A51870027D94D /* Reachability.m in Sources */,
+				120392C51C6CAB6E003536D7 /* JSONModelArray.m in Sources */,
+				120392D31C6CABA5003536D7 /* JSONAPI.m in Sources */,
 				127E990F1C6BA9BC00F5255C /* UAGithubURLConnection.m in Sources */,
+				120392C41C6CAB6E003536D7 /* JSONModel.m in Sources */,
 				125B83FE1C6A541A0027D94D /* AFHTTPRequestOperationManager.m in Sources */,
-				127E98E21C6BA32D00F5255C /* CRSServices.m in Sources */,
 				127E99071C6BA9BC00F5255C /* NSData+Base64.m in Sources */,
+				120392F91C6CCCB8003536D7 /* UIImageView+AFNetworking.m in Sources */,
 				127E99101C6BA9BC00F5255C /* UAReachability.m in Sources */,
+				120392F71C6CCCB8003536D7 /* UIAlertView+AFNetworking.m in Sources */,
+				120392FE1C6CCDC5003536D7 /* RepoViewCell.m in Sources */,
 				125B84151C6A543F0027D94D /* ActionSheetStringPicker.m in Sources */,
 				127E990A1C6BA9BC00F5255C /* NSString+UUID.m in Sources */,
 				125B84011C6A541A0027D94D /* AFSecurityPolicy.m in Sources */,
+				120392B61C6CA5DF003536D7 /* MainViewController.swift in Sources */,
 				125B84161C6A543F0027D94D /* SWActionSheet.m in Sources */,
+				120392D41C6CABA5003536D7 /* JSONHTTPClient.m in Sources */,
 				125B84041C6A541A0027D94D /* AFURLResponseSerialization.m in Sources */,
+				120392F61C6CCCB8003536D7 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				120392E21C6CB195003536D7 /* Owner.m in Sources */,
 				125B84141C6A543F0027D94D /* ActionSheetDatePicker.m in Sources */,
 				127E990C1C6BA9BC00F5255C /* UAGithubEngine.m in Sources */,
+				120392F51C6CCCB8003536D7 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				120392C61C6CAB6E003536D7 /* JSONModelClassProperty.m in Sources */,
 				127E990D1C6BA9BC00F5255C /* UAGithubEngineConstants.m in Sources */,
+				120392DB1C6CABBB003536D7 /* JSONKeyMapper.m in Sources */,
 				125B83FD1C6A541A0027D94D /* AFHTTPRequestOperation.m in Sources */,
 				125B84191C6A54780027D94D /* DropDownItem.swift in Sources */,
 				125B84081C6A54290027D94D /* MBProgressHUD.m in Sources */,
+				120392FB1C6CCCB8003536D7 /* UIWebView+AFNetworking.m in Sources */,
 				127E99061C6BA9BC00F5255C /* NSArray+Utilities.m in Sources */,
 				125B84251C6A5DE20027D94D /* CustomAlertViewDelegate.m in Sources */,
+				120392DE1C6CAE60003536D7 /* Repository.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

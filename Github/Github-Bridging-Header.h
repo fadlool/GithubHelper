@@ -10,3 +10,7 @@
 #import "ActionSheetStringPicker.h"
 #import "Helper.h"
 #import "UAGithubEngine.h"
+#import "JSONModel.h"
+#import "Repository.h"
+#import "Owner.h"
+#import "RepoViewCell.h"

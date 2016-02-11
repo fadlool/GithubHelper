@@ -25,15 +25,6 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let  engine:UAGithubEngine = UAGithubEngine(username: "fadlool", password: "2224662", withReachability: true)
-        //        [[ alloc] initWithUsername:@"aUser" password:@"aPassword" withReachability:YES];
-        
-        
-        engine.repositoriesWithSuccess({ (response) -> Void in
-            
-            }) { (error) -> Void in
-                
-        }
         // Do any additional setup after loading the view, typically from a nib.
         let orientation:UIDeviceOrientation = UIDevice.currentDevice().orientation
         if(orientation == UIDeviceOrientation.Portrait || orientation == UIDeviceOrientation.Unknown){
@@ -47,7 +38,6 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         }
         
         self.languageTxtField.leftViewMode = UITextFieldViewMode.Always;
-        self.languageTxtField.leftView = UIImageView(image: UIImage(named: "UserIcon"))
         self.languageTxtField.textAlignment = NSTextAlignment.Left
             
         self.languageTxtField.delegate = self;
@@ -96,7 +86,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         }
     
     }
-    @IBAction func loginBtnTapped(sender: AnyObject) {
+    @IBAction func getReposBtnTapped(sender: AnyObject) {
         self.getRepos()
        
     }
@@ -108,7 +98,18 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         }
         return true
     }
-    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == Common.SHOWREPOS_SEGUE_IDENTIFIER){
+            
+            let naviCtrlr:UINavigationController = segue.destinationViewController as! UINavigationController
+            let rootViewController = naviCtrlr.viewControllers.first
+            
+            let mainViewController:MainViewController = rootViewController as! MainViewController
+            
+            mainViewController.progLanguage = self.languageTxtField.text!
+        
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -208,47 +209,13 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
             return
         }
         
-        let internetStatus:NetworkStatus = (self.internetReachable?.currentReachabilityStatus())!
-        switch internetStatus{
-        case NotReachable:
-            //                NSLog("The internet is down.");
-            //                self.internetActive = NO;
-            let alertView:UIAlertView  = UIAlertView(title: nil, message: "internet_error".localized, delegate: nil, cancelButtonTitle: "ok_dialog".localized )
-            alertView.show()
-            break
-            
-        case ReachableViaWiFi:
-            NSLog("The internet is working via WIFI.");
-            
-            services.getRepos(self.languageTxtField.text!, getReposSuccess: { () -> () in
-                
-                }, getReposFailure: { (error, msg) -> () in
-                
-            })
-            
-            //                self.internetActive = YES;
-            break
-        case ReachableViaWWAN:
-            NSLog("The internet is working via WWAN.");
-            services.getRepos(self.languageTxtField.text!, getReposSuccess: { () -> () in
-                
-                }, getReposFailure: { (error, msg) -> () in
-                    
-            })
-            //                self.internetActive = YES;
-            break
-        default:
-            services.getRepos(self.languageTxtField.text!, getReposSuccess: { () -> () in
-                
-                }, getReposFailure: { (error, msg) -> () in
-                    
-            })
-            break
+        self.performSegueWithIdentifier("show_repos", sender: self)
+        
             
             
         }
  
-    }
+    
     
     override func viewDidDisappear(animated: Bool) {
         self.languageTxtField.text = ""

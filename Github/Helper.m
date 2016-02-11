@@ -9,6 +9,8 @@
 #import "Helper.h"
 #import "CustomAlertViewDelegate.h"
 #import <Github-Swift.h>
+#import "Repository.h"
+#import "UIImageView+AFNetworking.h"
 @implementation Helper
 
 + (Helper*)getInstance
@@ -66,56 +68,6 @@
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return newImage;
-}
-
-+(void) changeLanguageWithSegmentPosition{
-    
-    //    0 segment for English, 1 fo Arabic
-    NSString *currentLanguage ;
-    NSArray *langArr = [[NSUserDefaults standardUserDefaults] objectForKey:@"AppleLanguages"];
-    if ([[langArr objectAtIndex:0] isEqualToString:@"ar_SA"]) {
-        
-        currentLanguage =  @"en_US";
-        [[NSUserDefaults standardUserDefaults] setObject:[NSArray arrayWithObjects:currentLanguage, nil] forKey:@"AppleLanguages"];
-//        [[NSUserDefaults standardUserDefaults] setObject:@(English) forKey:[Common UserLanguage]];
-        [[NSUserDefaults standardUserDefaults] setObject:@(2) forKey:[Common UserLanguage]];
-    }else{
-        currentLanguage = @"ar_SA";
-        [[NSUserDefaults standardUserDefaults] setObject:[NSArray arrayWithObjects:currentLanguage, nil] forKey:@"AppleLanguages"];
-//        [[NSUserDefaults standardUserDefaults] setObject:@(Arabic) forKey:[Common UserLanguage]];
-        [[NSUserDefaults standardUserDefaults] setObject:@(1) forKey:[Common UserLanguage]];
-        
-    }
-    //    if (selectedSegement == 0){
-    //        currentLanguage = @"ar_SA";
-    //        [[NSUserDefaults standardUserDefaults] setObject:[NSArray arrayWithObjects:currentLanguage, nil] forKey:@"AppleLanguages"];
-    //        [[NSUserDefaults standardUserDefaults] setObject:@(Arabic) forKey:[Common UserLanguage]];
-    //
-    //    }else{
-    //        currentLanguage =  @"en_US";
-    //        [[NSUserDefaults standardUserDefaults] setObject:[NSArray arrayWithObjects:currentLanguage, nil] forKey:@"AppleLanguages"];
-    //        [[NSUserDefaults standardUserDefaults] setObject:@(English) forKey:[Common UserLanguage]];
-    //    }
-    
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    
-    [[NSUserDefaults standardUserDefaults] setObject:@"True" forKey:@"UIApplicationExitsOnSuspend"];
-    
-    NSString *msg = NSLocalizedString(@"language_change_confirm_dialog",nil);
-    
-    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"language_change_dialog_title", nil)
-                                                     message:msg
-                                                    delegate:self
-                                           cancelButtonTitle:nil
-                                           otherButtonTitles:NSLocalizedString(@"ok_dialog", nil), nil];
-    
-    [CustomAlertViewDelegate showAlertView:alert withCallback:^(UIAlertView *alertView, NSInteger buttonIndex) {
-        if ([[alertView buttonTitleAtIndex:buttonIndex] isEqualToString:NSLocalizedString(@"ok_dialog", nil)])
-        {
-            exit(0);
-        }
-    }];
-    
 }
 
 +(id)getJSONDictObjFromString:(NSString *)jsonString{
@@ -185,4 +137,44 @@
     return userVisibleDateTimeString;
 }
 
++(NSMutableArray *)getReposArr:(NSArray *)jsonArr{
+    NSMutableArray *reposArr = [[NSMutableArray alloc] init];
+    NSError* err = nil;
+    Repository* repo = nil;
+    NSString* str = nil;
+    for (int i=0; i<jsonArr.count; i++) {
+        str = [self getStringFromJSONDictObj:jsonArr[i]];
+        str = [str stringByReplacingOccurrencesOfString:@"null"
+                                             withString:@"\"\""];
+        repo = [[Repository alloc] initWithString:str error:&err];
+        [reposArr addObject:repo];
+    }
+    return reposArr;
+
+}
+
+
++(void) configureSenderImageView:(NSString*)senderImageURL imageView:(UIImageView*)imageView selected:(BOOL)selected
+{
+//    self.isSenderImageSelected = selected;
+    if (selected) {
+        imageView.image = [UIImage imageNamed:@"check_yes"];
+        imageView.contentMode = UIViewContentModeCenter;
+    } else {
+        //        [self.senderImageView setImageWithURL:[NSURL URLWithString:senderImageURL] placeholderImage:[UIImage imageNamed:@"person"]];
+        [imageView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:senderImageURL]] placeholderImage:[UIImage imageNamed:@"person"] success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+            imageView.image = image;
+            imageView.contentMode = UIViewContentModeScaleToFill;
+            if (selected) {
+                imageView.image = [UIImage imageNamed:@"check_yes"];
+                imageView.contentMode = UIViewContentModeCenter;
+            }
+        } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
+            if (selected) {
+                imageView.image = [UIImage imageNamed:@"check_yes"];
+                imageView.contentMode = UIViewContentModeCenter;
+            }
+        }];
+    }
+}
 @end
