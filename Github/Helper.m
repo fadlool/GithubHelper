@@ -1,9 +1,9 @@
 //
 //  Helper.m
-//  CRS
+//  Github
 //
-//  Created by Amr Abdelmonsef on 2/16/14.
-//  Copyright (c) 2014 Compulink. All rights reserved.
+//  Created by Mohamed Fadl on 2/11/16.
+//  Copyright © 2015 Microapps. All rights reserved.
 //
 
 #import "Helper.h"
@@ -101,28 +101,14 @@
     
     NSDateFormatter *rfc3339DateFormatter = [[NSDateFormatter alloc] init];
     NSLocale *enUSPOSIXLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_EG"];
-    
+//    2016-02-06T15:17:54Z
     [rfc3339DateFormatter setLocale:enUSPOSIXLocale];
-    [rfc3339DateFormatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'SSS'"];
+    [rfc3339DateFormatter setDateFormat:@"yyyy'-'mm'-'dd'T'HH':'mm':'ss'Z'"];
     [rfc3339DateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
     
     // Convert the RFC 3339 date time string to an NSDate.
     NSDate *gregorianDate = [rfc3339DateFormatter dateFromString:rfc3339DateTimeString];
     
-    
-    NSCalendar *hijriCalendar;
-    // Then create an Islamic calendar
-    if ([[[UIDevice currentDevice] systemVersion] doubleValue] >= 8.0) {
-        hijriCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierIslamicUmmAlQura];
-    } else {
-        // Fallback on earlier versions
-        hijriCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierIslamic];
-        
-    }
-    
-    // And grab those date components for the same date
-    NSDateComponents* hijriComponents = [hijriCalendar components:(NSCalendarUnitDay|NSCalendarUnitMonth|NSCalendarUnitYear|NSCalendarUnitHour|NSCalendarUnitMinute) fromDate:gregorianDate];
-
     NSString *userVisibleDateTimeString;
     if (gregorianDate != nil) {
         // Convert the date object to a user-visible date string.
@@ -142,11 +128,14 @@
     NSError* err = nil;
     Repository* repo = nil;
     NSString* str = nil;
+    NSDictionary *repoDict;
     for (int i=0; i<jsonArr.count; i++) {
-        str = [self getStringFromJSONDictObj:jsonArr[i]];
+        repoDict = jsonArr[i];
+        str = [self getStringFromJSONDictObj:repoDict];
         str = [str stringByReplacingOccurrencesOfString:@"null"
                                              withString:@"\"\""];
         repo = [[Repository alloc] initWithString:str error:&err];
+//        repo.desc = [repoDict objectForKey:@"description"];
         [reposArr addObject:repo];
     }
     return reposArr;

@@ -10,25 +10,21 @@ import Foundation
 
 class ReposTableViewController: UITableViewController,UISearchBarDelegate {
     
-    
     @IBOutlet weak var searchBar: UISearchBar!
     
     var isFiltered:Bool = false
-    var mapEventsList:NSMutableArray = []
+    var repoList:NSMutableArray = []
     var filteredTableData:NSMutableArray = []
     
     var mwTopRefreshControl:UIRefreshControl?
     var mwBottomRefreshControl:UIRefreshControl?
     var moreResultsAvail:Bool = false
-    var offset:Int = 0
-    
-    var editMode:Bool = false
+    var loading:Bool = false
+    var currentPage:Int = 1
+
     var refreshBar:UIRefreshControl?
     
     var mainViewController:MainViewController?
-    
-    var numOfSelectedItems:Int = 0
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,13 +33,14 @@ class ReposTableViewController: UITableViewController,UISearchBarDelegate {
         
         self.refreshBar?.addTarget(self, action: "refreshView:", forControlEvents: UIControlEvents.ValueChanged)
         
-        
         self.tableView.addSubview(self.refreshBar!)
-        
         self.mwTopRefreshControl =  self.refreshBar;
-        
-        
         self.searchBar.delegate = self
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.startRefreshControl()
         
     }
     
@@ -51,7 +48,7 @@ class ReposTableViewController: UITableViewController,UISearchBarDelegate {
         let cell:RepoViewCell = tableView.dequeueReusableCellWithIdentifier("repoViewCell") as! RepoViewCell
         
         NSLog(String(indexPath.row))
-        if(indexPath.row < self.mapEventsList.count){
+        if(indexPath.row < self.repoList.count){
             
             let contentItem:Repository
             if(self.isFiltered){
@@ -59,7 +56,7 @@ class ReposTableViewController: UITableViewController,UISearchBarDelegate {
                 
             }
             else{
-                contentItem = self.mapEventsList.objectAtIndex(indexPath.row) as! Repository
+                contentItem = self.repoList.objectAtIndex(indexPath.row) as! Repository
                 
             }
             
@@ -67,35 +64,19 @@ class ReposTableViewController: UITableViewController,UISearchBarDelegate {
             cell.configureAvatarImageView(contentItem.owner.avatar_url, selected: false)
             cell.avatarImageView!.tag = indexPath.row;
         
-//            cell.eventNameLabel.text = contentItem.desc
-//            cell.eventTimeLabel.text = contentItem.onTrackerTime
-//            cell.trackerNameLabel.text = contentItem.name
-//            
-//            self.addTapGesturetoBtn(cell.chkBtn!, selector: "btnChkTapped:")
-//            
-//            cell.chkBtn.setBackgroundImage(UIImage(named: "UncheckIcon"), forState: UIControlState.Normal)
-//            
-//            cell.chkBtn.setBackgroundImage(UIImage(named: "CheckIcon"), forState: UIControlState.Selected)
-//            cell.chkBtn.setBackgroundImage(UIImage(named: "CheckIcon"), forState: UIControlState.Highlighted)
-//            
-//            cell.chkBtn.selected = contentItem.selected
-//            
-//            cell.chkBtn.adjustsImageWhenHighlighted = true
-//            cell.chkBtn.tag = indexPath.row;
-//            cell.eventIcon.tag = indexPath.row;
-            
+            cell.repoNameLabel!.text = contentItem.full_name
+            cell.descLabel!.text = contentItem.owner.login
+            cell.lastUpdateDate!.text = Helper.userVisibleDateTimeStringForRFC3339DateTimeString(contentItem.updated_at)
+            cell.starsLabel!.text = String(contentItem.stargazers_count)
+            cell.forksLabel!.text = String(contentItem.forks_count)
         }
         
         
         cell.tag = indexPath.row;
         
-        if (indexPath.row == self.mapEventsList.count - 1)
-        {
-            self.loadMapObjects()
-        }
-        
         return cell
     }
+    
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         if(searchText.characters.count == 0)
         {
@@ -106,15 +87,15 @@ class ReposTableViewController: UITableViewController,UISearchBarDelegate {
             self.isFiltered = true;
             self.filteredTableData = []
             
-            for mapEvent in self.mapEventsList
+            for repo in self.repoList
             {
-                let nameString:NSString = mapEvent.name!
+                let nameString:NSString = repo.full_name!
                 
                 let nameRange:NSRange = nameString.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
                 
                 if(nameRange.location !=  NSNotFound)
                 {
-                    self.filteredTableData.addObject(mapEvent)
+                    self.filteredTableData.addObject(repo)
                 }
             }
         }
@@ -126,7 +107,7 @@ class ReposTableViewController: UITableViewController,UISearchBarDelegate {
     {
         self.searchBar.resignFirstResponder()
         
-        let item:Repository
+        var item:Repository
         
         if(isFiltered)
         {
@@ -134,32 +115,23 @@ class ReposTableViewController: UITableViewController,UISearchBarDelegate {
         }
         else
         {
-            item = self.mapEventsList.objectAtIndex(indexPath.row) as! Repository
+            item = self.repoList.objectAtIndex(indexPath.row) as! Repository
             
         }
         
-        //        self.mapViewController?.selectedUnits.addObject(item)
         self.navigationController?.popToRootViewControllerAnimated(true)
     }
-    
-    func blinkAndFlipButtonAnimationWithText(button:UIButton){
-        
-        UIView.transitionWithView(button, duration: 0.2, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () -> Void in
-            }) { (finished) -> Void in
-                
-        }
-    }
+   
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
     func refreshView(refresh:UIRefreshControl ) {
         // custom refresh logic would be placed here...
-        self.offset = 0;
-        self.mapEventsList.removeAllObjects()
+        self.repoList.removeAllObjects()
         self.tableView!.reloadData()
-        
-        self.loadMapObjects()
+        self.currentPage = 1
+        self.loadReposList()
     }
     
     func startRefreshControl(){
@@ -177,62 +149,54 @@ class ReposTableViewController: UITableViewController,UISearchBarDelegate {
         if(self.isFiltered){
             rowCount = self.filteredTableData.count;
         }else{
-            rowCount = self.mapEventsList.count;
+            rowCount = self.repoList.count;
         }
         
         return rowCount;
         
     }
+    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.showDetailsForIndexPath(indexPath)
     }
     
-    //    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
-    //        let more = UITableViewRowAction(style: .Normal, title: "more".localized) { action, index in
-    //            NSLog("more button tapped")
-    //        }
-    //        more.backgroundColor = UIColor.greenColor()
-    //
-    //        let follow = UITableViewRowAction(style: .Normal, title: "follow".localized) { action, index in
-    //            NSLog("follow button tapped")
-    //        }
-    //        follow.backgroundColor = UIColor.lightGrayColor()
-    //
-    //        let history = UITableViewRowAction(style: .Normal, title: "history".localized) { action, index in
-    //            NSLog("history button tapped")
-    //        }
-    //        history.backgroundColor = UIColor(red: 0.14, green: 0.61, blue: 0.87, alpha: 1.0)
-    //
-    //        return [history, follow, more]
-    //    }
-    
-    
-    func addTapGesturetoBtn(btn:UIView, selector:Selector)
-    {
-        btn.userInteractionEnabled = true
-        let tapGestureRecognizer:UITapGestureRecognizer  = UITapGestureRecognizer(target: self, action:selector)
-        tapGestureRecognizer.numberOfTapsRequired = 1;
-        btn.addGestureRecognizer(tapGestureRecognizer)
-        
-    }
-    
-    func loadMapObjects(){
+    func loadReposList(){
         let services:Services = Services()
-        
-        services.getRepos(mainViewController!.progLanguage!, getReposSuccess: { (reposArr) -> () in
-            MBProgressHUD.hideHUDForView(self.view!, animated: true)
+        self.loading = true
+        services.getRepos(mainViewController!.progLanguage!,pageNo: self.currentPage, getReposSuccess: { (reposArr) -> () in
+            
+            self.loading = false;
+            self.stopRefreshControl()
             if(reposArr!.count > 0){
-                self.mapEventsList.addObjectsFromArray(reposArr as! [AnyObject])
+                self.repoList.addObjectsFromArray(reposArr as! [AnyObject])
                 self.tableView!.reloadData()
-                self.stopRefreshControl()
                 
-//                self.offset = self.offset + Common.LIMIT;
             }
             }, getReposFailure: { (error, msg) -> () in
-                MBProgressHUD.hideHUDForView(self.view!, animated: true)
+                self.loading = false
+                self.stopRefreshControl()
                 
         })
         
     }
+    
+    override func scrollViewDidScroll(scrollView: UIScrollView) {
+        
+        self.searchBar.resignFirstResponder()
+    }
+    override func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        
+        
+        if (!self.loading) {
+            let endScrolling:CGFloat = scrollView.contentOffset.y + scrollView.frame.size.height;
+            if ( endScrolling >= scrollView.contentSize.height)
+            {
+                self.currentPage = self.currentPage + 1
+                self.loadReposList()
+            }
+        }
+
+    }
+    
     
 }

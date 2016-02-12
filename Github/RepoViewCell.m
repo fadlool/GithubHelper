@@ -2,7 +2,7 @@
 //  RepoViewCell.m
 //  Github
 //
-//  Created by Mohamed on 02/11/16.
+//  Created by Mohamed Fadl on 02/11/16.
 //  Copyright (c) 2014 Microapps. All rights reserved.
 //
 
@@ -42,7 +42,7 @@
     // Configure the view for the selected state
 }
 
--(void)setSenderImageView:(UIImageView *)avatarImageView
+-(void)setAvatarImageView:(UIImageView *)avatarImageView
 {
     _avatarImageView = avatarImageView;
     _avatarImageView.layer.borderColor = [UIColor colorWithRed:240/255.0
@@ -74,7 +74,7 @@
         self.avatarImageView.contentMode = UIViewContentModeCenter;
     } else {
 //        [self.senderImageView setImageWithURL:[NSURL URLWithString:senderImageURL] placeholderImage:[UIImage imageNamed:@"person"]];
-        [self.avatarImageView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:senderImageURL]] placeholderImage:[UIImage imageNamed:@"person"] success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+        [self.avatarImageView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:senderImageURL]] placeholderImage:[UIImage imageNamed:@"AvatarIcon"] success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
             self.avatarImageView.image = image;
             self.avatarImageView.contentMode = UIViewContentModeScaleToFill;
             if (self.isSenderImageSelected) {

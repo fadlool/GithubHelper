@@ -14,9 +14,8 @@
 @property (strong, nonatomic) NSString* name;
 @property (strong, nonatomic) NSString* full_name;
 @property (strong, nonatomic) Owner* owner;
-//@property (strong, nonatomic) NSString*  private: Bool?
 @property (strong, nonatomic) NSString*  html_url;
-//@property (strong, nonatomic) NSString*  description:NSString?
+@property (strong, nonatomic) NSString*  description;
 @property (assign, nonatomic) bool  fork;
 @property (strong, nonatomic) NSString*  url;
 @property (strong, nonatomic) NSString*  forks_url;
@@ -79,4 +78,6 @@
 @property (assign, nonatomic) int watchers;
 @property (strong, nonatomic) NSString*  default_branch;
 @property (assign, nonatomic) double  score;
+
+
 @end

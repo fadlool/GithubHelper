@@ -1,10 +1,11 @@
 //
 //  Helper.h
-//  CRS
+//  Github
 //
-//  Created by Amr Abdelmonsef on 2/16/14.
-//  Copyright (c) 2014 Compulink. All rights reserved.
+//  Created by Mohamed Fadl on 2/11/16.
+//  Copyright © 2015 Microapps. All rights reserved.
 //
+
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>

@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "iphone",
-      "filename" : "1455222069_star-3.png",
+      "filename" : "avatar-icon.png",
       "scale" : "1x"
     },
     {
       "idiom" : "iphone",
-      "filename" : "1455222069_star-1.png",
+      "filename" : "avatar-icon-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "iphone",
-      "filename" : "1455222069_star-2.png",
+      "filename" : "avatar-icon-2.png",
       "scale" : "3x"
     }
   ],

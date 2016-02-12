@@ -1,9 +1,9 @@
 //
-//  ViewController.swift
-//  DMS
+//  LoginViewController.swift
+//  Github
 //
-//  Created by Mohamed Fadl on 11/25/15.
-//  Copyright © 2015 Compulink. All rights reserved.
+//  Created by Mohamed Fadl on 2/11/16.
+//  Copyright © 2015 microapps. All rights reserved.
 //
 
 import UIKit

@@ -1,9 +1,9 @@
 //
 //  Services.swift
-//  DMS
+//  Github
 //
-//  Created by Mohamed Fadl on 12/7/15.
-//  Copyright © 2015 Compulink. All rights reserved.
+//  Created by Mohamed Fadl on 2/11/16.
+//  Copyright © 2015 Microapps. All rights reserved.
 //
 
 import Foundation
@@ -15,16 +15,10 @@ class Services: NSObject {
         return Common.BASE_URL
     }
     
-
-
-    
-  
-    
-    
-    
-    func getRepos(programmingLanguage:String,getReposSuccess:((NSMutableArray?) ->()),getReposFailure:(( NSError?,NSString?) ->()) ){
+    func getRepos(programmingLanguage:String,pageNo:Int,getReposSuccess:((NSMutableArray?) ->()),getReposFailure:(( NSError?,NSString?) ->()) ){
         
-        var url:String  = "\(self.serviceBaseURL())search/repositories?q=\(programmingLanguage)+language"
+        var url:String  = "\(self.serviceBaseURL())search/repositories?q=language:\(programmingLanguage)&page=\(pageNo)&per_page=\(Common.PAGE_SIZE)"
+        
         url = url.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
         
         let manager:AFHTTPRequestOperationManager = self.getOpManager()

@@ -6,14 +6,6 @@
 //  Copyright © 2016 microapps. All rights reserved.
 //
 
-//
-//  Owner.swift
-//  Github
-//
-//  Created by Mohamed Fadl on 2/11/16.
-//  Copyright © 2016 microapps. All rights reserved.
-//
-
 #import "JSONModel.h"
 
 @interface Owner : JSONModel

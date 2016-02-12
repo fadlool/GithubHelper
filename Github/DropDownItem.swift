@@ -1,10 +1,11 @@
 //
-//  VacType.swift
-//  VMS
+//  Dropdown``.swift
+//  Github
 //
-//  Created by Mohamed Fadl on 12/10/15.
-//  Copyright © 2015 Compulink. All rights reserved.
+//  Created by Mohamed Fadl on 2/11/16.
+//  Copyright © 2015 Microapps. All rights reserved.
 //
+
 
 import Foundation
 
