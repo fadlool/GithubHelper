@@ -50,10 +50,6 @@
 		125B84041C6A541A0027D94D /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 125B83FA1C6A541A0027D94D /* AFURLResponseSerialization.m */; };
 		125B84051C6A541A0027D94D /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 125B83FC1C6A541A0027D94D /* AFURLSessionManager.m */; };
 		125B84081C6A54290027D94D /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 125B84071C6A54290027D94D /* MBProgressHUD.m */; };
-		125B84131C6A543F0027D94D /* AbstractActionSheetPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 125B840B1C6A543F0027D94D /* AbstractActionSheetPicker.m */; };
-		125B84141C6A543F0027D94D /* ActionSheetDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 125B840D1C6A543F0027D94D /* ActionSheetDatePicker.m */; };
-		125B84151C6A543F0027D94D /* ActionSheetStringPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 125B84101C6A543F0027D94D /* ActionSheetStringPicker.m */; };
-		125B84161C6A543F0027D94D /* SWActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 125B84121C6A543F0027D94D /* SWActionSheet.m */; };
 		125B84191C6A54780027D94D /* DropDownItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125B84181C6A54780027D94D /* DropDownItem.swift */; };
 		125B841B1C6A55410027D94D /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125B841A1C6A55410027D94D /* Services.swift */; };
 		125B841E1C6A55810027D94D /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 125B841D1C6A55810027D94D /* Helper.m */; };
@@ -165,15 +161,6 @@
 		125B83FC1C6A541A0027D94D /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFURLSessionManager.m; path = Github/AFNetworking/AFURLSessionManager.m; sourceTree = "<group>"; };
 		125B84061C6A54290027D94D /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = Github/MBProgressHUD/MBProgressHUD.h; sourceTree = "<group>"; };
 		125B84071C6A54290027D94D /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = Github/MBProgressHUD/MBProgressHUD.m; sourceTree = "<group>"; };
-		125B840A1C6A543F0027D94D /* AbstractActionSheetPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AbstractActionSheetPicker.h; path = Github/Pickers/AbstractActionSheetPicker.h; sourceTree = "<group>"; };
-		125B840B1C6A543F0027D94D /* AbstractActionSheetPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AbstractActionSheetPicker.m; path = Github/Pickers/AbstractActionSheetPicker.m; sourceTree = "<group>"; };
-		125B840C1C6A543F0027D94D /* ActionSheetDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionSheetDatePicker.h; path = Github/Pickers/ActionSheetDatePicker.h; sourceTree = "<group>"; };
-		125B840D1C6A543F0027D94D /* ActionSheetDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionSheetDatePicker.m; path = Github/Pickers/ActionSheetDatePicker.m; sourceTree = "<group>"; };
-		125B840E1C6A543F0027D94D /* ActionSheetPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionSheetPicker.h; path = Github/Pickers/ActionSheetPicker.h; sourceTree = "<group>"; };
-		125B840F1C6A543F0027D94D /* ActionSheetStringPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionSheetStringPicker.h; path = Github/Pickers/ActionSheetStringPicker.h; sourceTree = "<group>"; };
-		125B84101C6A543F0027D94D /* ActionSheetStringPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionSheetStringPicker.m; path = Github/Pickers/ActionSheetStringPicker.m; sourceTree = "<group>"; };
-		125B84111C6A543F0027D94D /* SWActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWActionSheet.h; path = Github/Pickers/SWActionSheet.h; sourceTree = "<group>"; };
-		125B84121C6A543F0027D94D /* SWActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWActionSheet.m; path = Github/Pickers/SWActionSheet.m; sourceTree = "<group>"; };
 		125B84181C6A54780027D94D /* DropDownItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownItem.swift; sourceTree = "<group>"; };
 		125B841A1C6A55410027D94D /* Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		125B841C1C6A55810027D94D /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
@@ -381,7 +368,6 @@
 				120392C81C6CAB7F003536D7 /* JSONModelCategories */,
 				120392BB1C6CAB62003536D7 /* JSONModel */,
 				125B841F1C6A5DB50027D94D /* Dialogs */,
-				125B84091C6A542E0027D94D /* Pickers */,
 				125B83E91C6A53FC0027D94D /* MBProgressHUD */,
 				125B83E81C6A53EA0027D94D /* AFNetworking */,
 			);
@@ -423,22 +409,6 @@
 				125B84071C6A54290027D94D /* MBProgressHUD.m */,
 			);
 			name = MBProgressHUD;
-			sourceTree = "<group>";
-		};
-		125B84091C6A542E0027D94D /* Pickers */ = {
-			isa = PBXGroup;
-			children = (
-				125B840A1C6A543F0027D94D /* AbstractActionSheetPicker.h */,
-				125B840B1C6A543F0027D94D /* AbstractActionSheetPicker.m */,
-				125B840C1C6A543F0027D94D /* ActionSheetDatePicker.h */,
-				125B840D1C6A543F0027D94D /* ActionSheetDatePicker.m */,
-				125B840E1C6A543F0027D94D /* ActionSheetPicker.h */,
-				125B840F1C6A543F0027D94D /* ActionSheetStringPicker.h */,
-				125B84101C6A543F0027D94D /* ActionSheetStringPicker.m */,
-				125B84111C6A543F0027D94D /* SWActionSheet.h */,
-				125B84121C6A543F0027D94D /* SWActionSheet.m */,
-			);
-			name = Pickers;
 			sourceTree = "<group>";
 		};
 		125B84171C6A545E0027D94D /* Model */ = {
@@ -613,7 +583,6 @@
 				125B841B1C6A55410027D94D /* Services.swift in Sources */,
 				125B84001C6A541A0027D94D /* AFNetworkReachabilityManager.m in Sources */,
 				125B83AA1C6A455C0027D94D /* AppDelegate.swift in Sources */,
-				125B84131C6A543F0027D94D /* AbstractActionSheetPicker.m in Sources */,
 				125B84021C6A541A0027D94D /* AFURLConnectionOperation.m in Sources */,
 				120392D51C6CABA5003536D7 /* JSONModel+networking.m in Sources */,
 				120392B81C6CA5F4003536D7 /* ReposTableViewController.swift in Sources */,
@@ -633,16 +602,13 @@
 				120392F91C6CCCB8003536D7 /* UIImageView+AFNetworking.m in Sources */,
 				120392F71C6CCCB8003536D7 /* UIAlertView+AFNetworking.m in Sources */,
 				120392FE1C6CCDC5003536D7 /* RepoViewCell.m in Sources */,
-				125B84151C6A543F0027D94D /* ActionSheetStringPicker.m in Sources */,
 				125B84011C6A541A0027D94D /* AFSecurityPolicy.m in Sources */,
 				120392B61C6CA5DF003536D7 /* MainViewController.swift in Sources */,
-				125B84161C6A543F0027D94D /* SWActionSheet.m in Sources */,
 				120392D41C6CABA5003536D7 /* JSONHTTPClient.m in Sources */,
 				D960E7C21C6E8EA5001761AF /* DetailsTableViewController.swift in Sources */,
 				125B84041C6A541A0027D94D /* AFURLResponseSerialization.m in Sources */,
 				120392F61C6CCCB8003536D7 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				120392E21C6CB195003536D7 /* Owner.m in Sources */,
-				125B84141C6A543F0027D94D /* ActionSheetDatePicker.m in Sources */,
 				120392F51C6CCCB8003536D7 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				120392C61C6CAB6E003536D7 /* JSONModelClassProperty.m in Sources */,
 				120392DB1C6CABBB003536D7 /* JSONKeyMapper.m in Sources */,
