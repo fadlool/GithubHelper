@@ -70,6 +70,9 @@
 		127E990E1C6BA9BC00F5255C /* UAGithubJSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 127E99011C6BA9BC00F5255C /* UAGithubJSONParser.m */; };
 		127E990F1C6BA9BC00F5255C /* UAGithubURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 127E99031C6BA9BC00F5255C /* UAGithubURLConnection.m */; };
 		127E99101C6BA9BC00F5255C /* UAReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 127E99051C6BA9BC00F5255C /* UAReachability.m */; };
+		D960E7C21C6E8EA5001761AF /* DetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D960E7C11C6E8EA5001761AF /* DetailsTableViewController.swift */; };
+		D960E7C41C6E90F8001761AF /* Contributer.m in Sources */ = {isa = PBXBuildFile; fileRef = D960E7C31C6E90F8001761AF /* Contributer.m */; };
+		D960E7C71C6E9232001761AF /* Issue.m in Sources */ = {isa = PBXBuildFile; fileRef = D960E7C61C6E9232001761AF /* Issue.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -213,6 +216,11 @@
 		127E99031C6BA9BC00F5255C /* UAGithubURLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UAGithubURLConnection.m; path = Github/UAGithubEngine/UAGithubURLConnection.m; sourceTree = "<group>"; };
 		127E99041C6BA9BC00F5255C /* UAReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UAReachability.h; path = Github/UAGithubEngine/UAReachability.h; sourceTree = "<group>"; };
 		127E99051C6BA9BC00F5255C /* UAReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UAReachability.m; path = Github/UAGithubEngine/UAReachability.m; sourceTree = "<group>"; };
+		D960E7C11C6E8EA5001761AF /* DetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsTableViewController.swift; sourceTree = "<group>"; };
+		D960E7C31C6E90F8001761AF /* Contributer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contributer.m; sourceTree = "<group>"; };
+		D960E7C51C6E9109001761AF /* Contributer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Contributer.h; sourceTree = "<group>"; };
+		D960E7C61C6E9232001761AF /* Issue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Issue.m; sourceTree = "<group>"; };
+		D960E7C81C6E9243001761AF /* Issue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Issue.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -368,6 +376,7 @@
 				125B83DD1C6A51470027D94D /* LoginViewController.swift */,
 				120392B51C6CA5DF003536D7 /* MainViewController.swift */,
 				120392B71C6CA5F4003536D7 /* ReposTableViewController.swift */,
+				D960E7C11C6E8EA5001761AF /* DetailsTableViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -477,6 +486,10 @@
 				120392DF1C6CAE6F003536D7 /* Repository.h */,
 				120392E01C6CB113003536D7 /* Owner.h */,
 				120392E11C6CB195003536D7 /* Owner.m */,
+				D960E7C31C6E90F8001761AF /* Contributer.m */,
+				D960E7C51C6E9109001761AF /* Contributer.h */,
+				D960E7C61C6E9232001761AF /* Issue.m */,
+				D960E7C81C6E9243001761AF /* Issue.h */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -659,6 +672,7 @@
 				120392FA1C6CCCB8003536D7 /* UIProgressView+AFNetworking.m in Sources */,
 				125B84051C6A541A0027D94D /* AFURLSessionManager.m in Sources */,
 				127E99091C6BA9BC00F5255C /* NSString+UAGithubEngineUtilities.m in Sources */,
+				D960E7C71C6E9232001761AF /* Issue.m in Sources */,
 				120392F81C6CCCB8003536D7 /* UIButton+AFNetworking.m in Sources */,
 				125B83DE1C6A51470027D94D /* LoginViewController.swift in Sources */,
 				120392C71C6CAB6E003536D7 /* JSONModelError.m in Sources */,
@@ -678,6 +692,7 @@
 				125B84031C6A541A0027D94D /* AFURLRequestSerialization.m in Sources */,
 				125B83B21C6A455C0027D94D /* Github.xcdatamodeld in Sources */,
 				127E990E1C6BA9BC00F5255C /* UAGithubJSONParser.m in Sources */,
+				D960E7C41C6E90F8001761AF /* Contributer.m in Sources */,
 				125B83E41C6A52090027D94D /* Common.swift in Sources */,
 				125B83E21C6A51870027D94D /* Reachability.m in Sources */,
 				120392C51C6CAB6E003536D7 /* JSONModelArray.m in Sources */,
@@ -696,6 +711,7 @@
 				120392B61C6CA5DF003536D7 /* MainViewController.swift in Sources */,
 				125B84161C6A543F0027D94D /* SWActionSheet.m in Sources */,
 				120392D41C6CABA5003536D7 /* JSONHTTPClient.m in Sources */,
+				D960E7C21C6E8EA5001761AF /* DetailsTableViewController.swift in Sources */,
 				125B84041C6A541A0027D94D /* AFURLResponseSerialization.m in Sources */,
 				120392F61C6CCCB8003536D7 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				120392E21C6CB195003536D7 /* Owner.m in Sources */,

@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "30CDB3A22A2A31BCA951749883C6C2175F72FECE",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "30CDB3A22A2A31BCA951749883C6C2175F72FECE" : 0,
+    "A34C7EDC76EB320CD8A760C98B17E7DC8BBB2D30" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "F435CB12-B045-4B4F-B99B-41162527637F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "30CDB3A22A2A31BCA951749883C6C2175F72FECE" : "GithubHelper\/",
+    "A34C7EDC76EB320CD8A760C98B17E7DC8BBB2D30" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Github",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Github.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/fadlool\/GithubHelper.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "30CDB3A22A2A31BCA951749883C6C2175F72FECE"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/212.70.49.106:11202\/fadl\/Afaqy.in-iOS-App.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A34C7EDC76EB320CD8A760C98B17E7DC8BBB2D30"
+    }
+  ]
+}

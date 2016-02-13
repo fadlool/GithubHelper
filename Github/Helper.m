@@ -10,6 +10,8 @@
 #import "CustomAlertViewDelegate.h"
 #import <Github-Swift.h>
 #import "Repository.h"
+#import "Issue.h"
+#import "Contributer.h"
 #import "UIImageView+AFNetworking.h"
 @implementation Helper
 
@@ -135,12 +137,57 @@
         str = [str stringByReplacingOccurrencesOfString:@"null"
                                              withString:@"\"\""];
         repo = [[Repository alloc] initWithString:str error:&err];
-//        repo.desc = [repoDict objectForKey:@"description"];
-        [reposArr addObject:repo];
+//        if(err != nil && repo != nil){
+        repo.url = [repoDict objectForKey:@"description"];
+            [reposArr addObject:repo];
+//        }
     }
     return reposArr;
 
 }
+
+
++(NSMutableArray *)getIssuesArr:(NSArray *)jsonArr{
+    NSMutableArray *issuesArr = [[NSMutableArray alloc] init];
+    NSError* err = nil;
+    Issue* issue = nil;
+    NSString* str = nil;
+    NSDictionary *issueDict;
+    for (int i=0; i<jsonArr.count; i++) {
+        issueDict = jsonArr[i];
+        str = [self getStringFromJSONDictObj:issueDict];
+        str = [str stringByReplacingOccurrencesOfString:@"null"
+                                             withString:@"\"\""];
+        issue = [[Issue alloc] initWithString:str error:&err];
+        if(err != nil && issue != nil){
+            [issuesArr addObject:issue];
+        }
+    }
+    return issuesArr;
+    
+}
+
+
++(NSMutableArray *)getCommittersArr:(NSArray *)jsonArr{
+    NSMutableArray *commitsArr = [[NSMutableArray alloc] init];
+    NSError* err = nil;
+    Contributer* issue = nil;
+    NSString* str = nil;
+    NSDictionary *issueDict;
+    for (int i=0; i<jsonArr.count; i++) {
+        issueDict = jsonArr[i];
+        str = [self getStringFromJSONDictObj:issueDict];
+        str = [str stringByReplacingOccurrencesOfString:@"null"
+                                             withString:@"\"\""];
+        issue = [[Contributer alloc] initWithString:str error:&err];
+//        if(err != nil && issue != nil){
+            [commitsArr addObject:issue];
+//        }
+    }
+    return commitsArr;
+    
+}
+
 
 
 +(void) configureSenderImageView:(NSString*)senderImageURL imageView:(UIImageView*)imageView selected:(BOOL)selected

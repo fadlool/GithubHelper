@@ -1,18 +1,17 @@
 //
-//  Owner.h
+//  Committer.h
 //  Github
 //
-//  Created by Mohamed Fadl on 2/11/16.
+//  Created by Mohamed Fadl Allah on 2/13/16.
 //  Copyright © 2016 microapps. All rights reserved.
 //
-
 #import "JSONModel.h"
 
+@interface Contributer:JSONModel
 
-@interface Owner : JSONModel
 @property (strong, nonatomic) NSString* login;
 @property (assign, nonatomic) int id;
-@property (strong, nonatomic) NSString* avatar_url;
+@property (strong, nonatomic) NSString*  avatar_url;
 @property (strong, nonatomic) NSString* gravatar_id;
 @property (strong, nonatomic) NSString* url;
 @property (strong, nonatomic) NSString* html_url;
@@ -27,6 +26,7 @@
 @property (strong, nonatomic) NSString* received_events_url;
 @property (strong, nonatomic) NSString* type;
 @property (assign, nonatomic) bool site_admin;
+@property (assign, nonatomic) int contributions;
+
 
 @end
-

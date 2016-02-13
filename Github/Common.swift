@@ -16,7 +16,9 @@ extension String {
 
 public class Common: NSObject {
     
-    public static let PAGE_SIZE = 10
+    public static let PageSize = 10
+    
+    public static let SHOW_ITME_SEGUE_IDENTIFIER = "show_item"
     public static let EMBED_SEGUE_IDENTIFIER = "embed_list"
     public static let SHOWREPOS_SEGUE_IDENTIFIER = "show_repos"
     public static let BASE_URL:String = "https://api.github.com/"
@@ -56,6 +58,27 @@ public class Common: NSObject {
         let newImage:UIImage  = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return newImage
+    }
+    
+    class func showErrorMsg(message:NSString?, error:NSError?, viewCtrl:UIViewController){
+        var alertMessage:NSString?
+        if(message != nil ){
+            alertMessage = message
+            NSLog("message: %@", message!)
+            
+        }else{
+            alertMessage =  error!.localizedDescription
+            
+        }
+        
+        alertMessage = (message != nil ? (message)! as String : error!.localizedDescription)
+        if (String( alertMessage) != nil) {
+            let alert = UIAlertController(title: nil, message: alertMessage as! String , preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "ok_dialog".localized, style: UIAlertActionStyle.Default, handler: nil))
+            viewCtrl.presentViewController(alert, animated: true, completion: nil)
+            
+            
+        }
     }
     
 }

@@ -15,7 +15,6 @@
 @property (strong, nonatomic) NSString* full_name;
 @property (strong, nonatomic) Owner* owner;
 @property (strong, nonatomic) NSString*  html_url;
-@property (strong, nonatomic) NSString*  description;
 @property (assign, nonatomic) bool  fork;
 @property (strong, nonatomic) NSString*  url;
 @property (strong, nonatomic) NSString*  forks_url;

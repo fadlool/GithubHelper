@@ -14,3 +14,5 @@
 #import "Repository.h"
 #import "Owner.h"
 #import "RepoViewCell.h"
+#import "Issue.h"
+#import "Contributer.h"

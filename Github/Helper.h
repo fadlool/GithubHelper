@@ -19,4 +19,7 @@
 + (NSString*) getStringFromJSONDictObj:(id)jsonDictObj;
 + (NSString *)userVisibleDateTimeStringForRFC3339DateTimeString:(NSString *)rfc3339DateTimeString;
 + (NSMutableArray*) getReposArr:(NSArray *)jsonArr;
++ (NSMutableArray*) getIssuesArr:(NSArray *)jsonArr;
++ (NSMutableArray*) getCommittersArr:(NSArray *)jsonArr;
+
 @end

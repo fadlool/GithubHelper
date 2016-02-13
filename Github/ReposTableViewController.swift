@@ -23,7 +23,9 @@ class ReposTableViewController: UITableViewController,UISearchBarDelegate {
     var currentPage:Int = 1
 
     var refreshBar:UIRefreshControl?
-    
+    var topIssuesArr:NSMutableArray = []
+    var topCommittersArr:NSMutableArray = []
+    var selectedRepo:Repository?
     var mainViewController:MainViewController?
     
     override func viewDidLoad() {
@@ -37,10 +39,11 @@ class ReposTableViewController: UITableViewController,UISearchBarDelegate {
         self.mwTopRefreshControl =  self.refreshBar;
         self.searchBar.delegate = self
         
+        self.startRefreshControl()
+        
     }
     
     override func viewWillAppear(animated: Bool) {
-        self.startRefreshControl()
         
     }
     
@@ -107,21 +110,51 @@ class ReposTableViewController: UITableViewController,UISearchBarDelegate {
     {
         self.searchBar.resignFirstResponder()
         
-        var item:Repository
         
         if(isFiltered)
         {
-            item = self.filteredTableData.objectAtIndex(indexPath.row) as! Repository
+            self.selectedRepo = self.filteredTableData.objectAtIndex(indexPath.row) as! Repository
         }
         else
         {
-            item = self.repoList.objectAtIndex(indexPath.row) as! Repository
+            self.selectedRepo = self.repoList.objectAtIndex(indexPath.row) as! Repository
             
         }
         
-        self.navigationController?.popToRootViewControllerAnimated(true)
+        
+        let services:Services = Services()
+        MBProgressHUD.showHUDAddedTo(self.view!, animated: true)
+        services.getIssues(self.selectedRepo!.full_name, getIssuesSuccess: { (issuesArr) -> () in
+           
+            self.topIssuesArr.addObjectsFromArray(issuesArr as! [AnyObject])
+            
+            services.getCommitters(self.selectedRepo!.name, ownerName: self.selectedRepo!.owner.login, getCommittersSuccess: { (committersArr) -> () in
+                MBProgressHUD.hideHUDForView(self.view!, animated: true)
+                self.topCommittersArr.addObjectsFromArray(committersArr as! [AnyObject])
+                
+                
+                self.performSegueWithIdentifier(Common.SHOW_ITME_SEGUE_IDENTIFIER, sender: self)
+                }) { (error, message) -> () in
+                    MBProgressHUD.hideHUDForView(self.view!, animated: true)
+                    Common.showErrorMsg(message, error: error, viewCtrl: self)
+            }
+            
+            
+            }) { (error, message) -> () in
+                MBProgressHUD.hideHUDForView(self.view!, animated: true)
+                Common.showErrorMsg(message, error: error, viewCtrl: self)
+        }
+        
     }
    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == Common.SHOW_ITME_SEGUE_IDENTIFIER){
+            let detailsTableViewController:DetailsTableViewController = segue.destinationViewController as! DetailsTableViewController
+            
+            detailsTableViewController.reposTabeViewController = self
+        }
+    }
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
